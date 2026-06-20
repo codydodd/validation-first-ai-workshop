@@ -108,4 +108,102 @@ By the end of the workshop, participants will understand:
 
 - Why validation‑first AI architectures combine deterministic ML with LLMs as narrators, or sometimes orchestrators, but not predictors.
 
+## Other reflections
+
+What Participants Learned (and felt)
+1. Deterministic vs Generative is not a theory — it’s observable
+
+We saw that:
+- Derministic Python model produced the same answer every time
+- LLM attempts produced 30 different answers from 30 people
+- Claude only “got close” because it used agentic Python execution
+- Copilot sometimes guessed, sometimes drifted, sometimes tried Python, sometimes didn’t
+
+This is the perfect demonstration of LLM non‑determinism.
+
+2. We discovered contamination and leakage firsthand
+
+Because we used PIMA — a public dataset — we saw:
+
+- Claude and Copilot “finding” the headers online
+
+- Meaning: LLMs don’t just use the file — they use the internet
+
+- Which means predictions can be polluted, biased, or inconsistent
+
+This is the best possible demonstration of ungrounded inference.
+
+3. We learned that LLMs don’t “do math” — they simulate it
+
+Your diabetes activity showed:
+
+- LLMs simulate regression
+
+- Claude delegates to Python
+
+- Copilot sometimes tries, sometimes doesn’t
+
+- is a substitute for deterministic computation
+
+This is the exact distinction we wanted to internalize.
+
+4. We saw that “drivers analysis” is a decision tree, not a prompt
+
+Every LLM:
+
+- Chose different preprocessing
+- Chose different encodings
+- Chose different models
+- Chose different hyperparameters
+- Produced different importances
+
+While your Random Forest:
+
+- Produced the same importances
+- Every time
+- For everyone
+
+This is the perfect demonstration of model reproducibility.
+
+5. We learned that LLMs struggle with structured classification
+
+Our theme‑tagging activity was impactful because it showed:
+
+- Dictionaries = transparent, surprisingly strong for some themes
+- Naive ML = weak without feature engineering
+- Weighted ML = excellent, fast, reliable
+- Claude = powerful but slow, expensive, and fragile
+- Copilot = winging it
+
+This is the exact lesson of validation‑first AI.
+
+6. We saw the future: ensemble systems
+
+- We didn’t just learn “LLMs are flawed.”
+- We learned:
+- “LLMs are one component in a larger architecture — and the deterministic components do heavy lifting.”
+
+This is the core of AI ensemble design. Because we didn’t just learn the thesis —
+we collectively experimented on it.
+
+- We felt the instability.
+- We felt the drift.
+- We felt the inconsistency.
+- We felt the determinism of Python.
+- We felt the reliability of ML.
+- We felt the fragility of LLMs.
+
+And once someone feels the architecture, they never forget it.
+
+### What we achieved
+
+- A mental model for when to trust LLMs
+- A mental model for when not to
+- A clear understanding of deterministic vs generative
+- A lived experience of reproducibility vs drift
+- A practical sense of how to build hybrid AI systems
+- A realistic view of Claude as “the optimistic middle ground”
+- A sense of empowerment — not fear
+
+This is exactly what the field needs right now.
 
