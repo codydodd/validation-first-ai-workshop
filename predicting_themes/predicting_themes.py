@@ -10,11 +10,10 @@ from sklearn.model_selection import train_test_split
 # 1. Load human‑validated dataset
 # ---------------------------------------------------------
 """
-Source: Service Canada - Client Insights and Impact Measurement team
-899 comments tagged by the team according to themes identified by the client insights team
+Source: CF 2023 Open Text data (randomized subset of 220 comments selected from benefits programs across all three levels of government)
 """
 
-df = pd.read_excel("predicting_themes/datasets/text_analysis_online_social_security_application-with_results.xlsx",     
+df = pd.read_excel("predicting_themes/datasets/CF2023-subset-benefits-anonymized-wave-1-results.xlsx",     
     sheet_name=0,
     header=0,
     dtype=str,              # prevents dtype inference that drops rows
@@ -38,10 +37,10 @@ human_labels = df[theme_cols].astype(int)
 # 2. Load keyword dictionary
 # ---------------------------------------------------------
 """
-Source: Service Canada - Client Insights and Impact Measurement team & PigeonLine's ResearchAI
-A dictionary made using PigeonLine's ResearchAI for an online social security application, developed by the client insights team
+Source: Client Insights and Impact Measurement team & PigeonLine's ResearchAI
+A dictionary made using PigeonLine's ResearchAI for an benefits applications
 """
-dict_df = pd.read_excel("predicting_themes/dictionaries/custom_topic_model-online_application.xlsx")
+dict_df = pd.read_excel("predicting_themes/dictionaries/custom_topics_model-benefits-programs.xlsx")
 
 # Each row = theme, columns = keywords
 keyword_dict = {
@@ -57,13 +56,13 @@ keyword_dict = {
 # 3. Load pre-modelled data (for comparison) - OPTIONAL
 # ---------------------------------------------------------
 """
-Source: Service Canada - Client Insights and Impact Measurement team & PigeonLine's ResearchAI
-All 899 comments tagged according to the ResearchAI advanced machine learning tool, which lets users choose weights and snapshots that will define thematic modelling.
+Source: CF 2023 Open Text data (randomized subset of 220 comments selected from benefits programs across all three levels of government).
+All comments tagged externally (in this case using an advanced ML model)
 """
 import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-advanced_ml_path = os.path.join(base_dir, "modelled_data", "text_analysis-advanced_ml.xlsx")
+advanced_ml_path = os.path.join(base_dir, "modelled_data", "text_analysis_ml_results.xlsx")
 
 # ---------------------------------------------------------
 # 3. Normalize text
